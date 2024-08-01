@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>flir.ac</path>
+
+  
+  
+  
+  <!-- rotation animation -->
+  
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>Gass</object-name>
+
+  </animation>
+	
+	
+
+  
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+ <object-name>Gass</object-name>
+
+
+    </effect>
+  
+  
+  
+<!-- Solid Surfaces for Rembrandt rendering -->
+   <animation>
+    
+  <object-name>rotor</object-name>
+	<object-name>turretball</object-name>
+<object-name>turretbase</object-name>
+	<object-name>flir-mount</object-name>	
+    </animation>
+  
+  <animation>
+<type>rotate</type>
+
+<object-name>Glass</object-name>
+<object-name>turretball</object-name>
+
+<property>sim/model/turret-positions/turretz</property>
+<factor>1</factor>
+<axis>
+<x>0</x>
+<y>1</y>
+<z>0</z>
+</axis>
+<center>
+<x-m>-0.0</x-m>
+<y-m>0.00</y-m>
+<z-m>-0.16</z-m>
+</center>
+</animation>
+
+
+<animation>
+<type>rotate</type>
+<object-name>Glass</object-name>
+<object-name>turretball</object-name>
+<object-name>turretbase</object-name>
+<property>sim/model/turret-positions/turretx</property>
+<factor>1</factor>
+<axis>
+<x>0</x>
+<y>0</y>
+<z>1</z>
+</axis>
+<center>
+<x-m>-0.0</x-m>
+<y-m>0.00</y-m>
+<z-m>0</z-m>
+</center>
+</animation>
+
+</PropertyList>
