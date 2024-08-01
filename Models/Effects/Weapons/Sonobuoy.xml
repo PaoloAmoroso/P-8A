@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>Sonobuoy.ac</path>
+	<animation>
+		<type>billboard</type>
+		<spherical>true</spherical>
+	</animation>
+	<animation>
+		<type>dist-scale</type>
+		<object-name>sonobuoy</object-name>
+		<interpolation>
+			<entry><ind>0</ind><dep>1.2</dep></entry>
+			<entry><ind>800</ind><dep>2.0</dep></entry>
+		</interpolation>
+	</animation>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>sonobuoy</object-name>
+	</effect>
+	<animation>
+		<type>material</type>
+		<object-name>sonobuoy</object-name>
+		<transparency>
+			<alpha-prop>sim/time/elapsed-sec</alpha-prop>
+			<factor>-0.05</factor>
+			<offset>1.0</offset>
+		</transparency>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <submodel>
+    <name>SAR Raft Inflated</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/SAR/SAR_Raft_Inflated.xml</model>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <delay>0</delay>
+    <count>-1</count>
+    <x-offset>0</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>0</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <eda>10</eda>
+    <wind>false</wind>
+    <buoyancy>32.1504</buoyancy>
+    <life>600</life>
+  </submodel>
+
+</PropertyList>
