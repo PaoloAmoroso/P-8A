@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Royal New Zealand Air Force</name>
+            <texture>Liveries-P-8/RNZAF.png</texture>  
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>     			
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
