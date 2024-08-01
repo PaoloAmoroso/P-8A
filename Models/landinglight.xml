@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+   <path>landinglight.ac</path>
+
+   <animation>
+	<type>knob</type>
+	<object-name>light.inbd.l</object-name>
+	<property>controls/lighting/landing-lights</property>
+	<factor>-25</factor>
+	<cursor>hand</cursor>
+	<action>
+	<binding>
+			<command>property-toggle</command>
+			<property>controls/lighting/landing-lights</property>
+		</binding>
+		<binding>
+          <command>nasal</command>
+        <script>props.globals.getNode("controls/switches/switch").setBoolValue(1);</script>
+      </binding>
+	</action>
+	<!--<center>
+		<x-m>0.285</x-m><z-m>-0.014</z-m>
+	</center>-->
+	<axis>
+		<y>-1</y>
+	</axis>
+</animation>
+</PropertyList>
+   
+   
+   

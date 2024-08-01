@@ -1,0 +1,1502 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <path>P-8.ac</path>
+  <animation>
+    <texture>737-800.png</texture>
+  </animation>
+  
+  <nasal n="0">
+	<load>
+	 var livery_update = aircraft.livery_update.new("Aircraft/P-8A/Models/Liveries-P-8");
+	</load>
+	<unload>
+	 livery_update.stop();
+	</unload>
+  </nasal>
+  
+  <animation n="0">
+    <type>material</type>
+    <object-name>engnose.001</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>doorLF</object-name>
+    <object-name>EexitLF</object-name>
+    <object-name>EexitLR</object-name>
+    <object-name>doorLR</object-name>
+    <object-name>doorRR</object-name>
+    <object-name>EexitRF</object-name>
+    <object-name>EexitRR</object-name>
+    <object-name>doorRF</object-name>
+    <object-name>cargodoorF</object-name>
+    <object-name>cargodoorR</object-name>
+    <object-name>lhfairing</object-name>
+    <object-name>geardoor</object-name>
+    <object-name>lreverserib_1</object-name>
+    <object-name>rhngdoor</object-name>
+    <object-name>lhngdoor</object-name>
+    <object-name>rhwtobfairing</object-name>
+    <object-name>geardoorrh</object-name>
+    <object-name>No2engfancase</object-name>
+    <object-name>No2reverser_1</object-name>
+    <object-name>fan2</object-name>
+    <object-name>vstab</object-name>
+    <object-name>rudder</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+  </animation>
+
+  <!-- <animation n="0">
+    <type>material</type>
+    <object-name>ESM</object-name>
+    <object-name>MWS</object-name>
+    <object-name>Sensor1</object-name>
+    <object-name>Sensor2</object-name>
+    <object-name>Sensor3</object-name>
+    <object-name>AntennaATC-ITT</object-name>
+    <object-name>SATCOM</object-name>
+    <object-name>Scanner_ESM</object-name>
+    <object-name>nonones.009</object-name>
+    <object-name>AntennaESM</object-name>
+    <object-name>AntennaESM2</object-name>
+    <object-name>AntennaTACAN1</object-name>
+    <object-name>AntennaTACAN2</object-name>
+    <object-name>CDL</object-name>
+    <object-name>LWF</object-name>
+    <object-name>DIRCM</object-name>
+    <object-name>Inmarsat</object-name>
+    <object-name>madboom</object-name>
+    <object-name>Bumper</object-name>
+    <object-name>Weapon-Rack-int</object-name>
+    <object-name>Weapon-Rack-ext</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+  </animation> -->
+  
+  <effect>
+    <inherits-from>Effects/glass</inherits-from>
+    <object-name>windows.int</object-name>
+    <object-name>rearwindows.int</object-name>
+  </effect>
+  <!-- <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>windows.ext</object-name>
+    <object-name>rearwindows.ext</object-name>
+  </effect> -->
+
+<effect>
+  <inherits-from>Effects/model</inherits-from>
+  <parameters>
+	  <lightmap-enabled><use>controls/lighting/landing-lights-norm</use></lightmap-enabled>
+    <texture n="3">
+      <image>Aircraft/P-8A/Models/Effects/LightMap/737-800lightmap.png</image>
+    </texture>
+    
+  </parameters>
+  <object-name>fuselage</object-name>
+  <object-name>EexitRR</object-name>
+  <object-name>EexitLF</object-name>
+  <object-name>EexitLR</object-name>
+  <object-name>EexitRF</object-name>
+  <object-name>cargodoorR</object-name>
+  <object-name>cargodoorF</object-name>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+
+  <object-name>ESM</object-name>
+  <object-name>MWS</object-name>
+  <object-name>Sensor1</object-name>
+  <object-name>Sensor2</object-name>
+  <object-name>Sensor3</object-name>
+  <object-name>AntennaATC-ITT</object-name>
+  <object-name>SATCOM</object-name>
+  <object-name>Scanner_ESM</object-name>
+  <object-name>nonones.009</object-name>
+  <object-name>AntennaESM</object-name>
+  <object-name>AntennaESM2</object-name>
+  <object-name>AntennaTACAN1</object-name>
+  <object-name>AntennaTACAN2</object-name>
+  <object-name>CDL</object-name>
+  <object-name>LWF</object-name>
+  <object-name>DIRCM</object-name>
+  <object-name>Inmarsat</object-name>
+  <object-name>madboom</object-name>
+  <object-name>Bumper</object-name>
+  <object-name>Weapon-Rack-int</object-name>
+  <object-name>Weapon-rack-ext</object-name>
+  </effect>
+
+  <!-- This for a better performance while in flight... -->
+   <animation>
+     <type>select</type>
+     <object-name>ESM</object-name>
+     <object-name>MWS</object-name>
+     <object-name>Sensor1</object-name>
+     <object-name>Sensor2</object-name>
+     <object-name>Sensor3</object-name>
+     <object-name>AntennaATC-ITT</object-name>
+     <object-name>SATCOM</object-name>
+     <object-name>Scanner_ESM</object-name>
+     <object-name>nonones.009</object-name>
+     <object-name>AntennaESM</object-name>
+     <object-name>AntennaESM2</object-name>
+     <object-name>AntennaTACAN1</object-name>
+     <object-name>AntennaTACAN2</object-name>
+     <object-name>CDL</object-name>
+     <object-name>LWF</object-name>
+     <object-name>DIRCM</object-name>
+     <object-name>Inmarsat</object-name>
+     <object-name>madboom</object-name>
+     <object-name>Bumper</object-name>
+     <object-name>Weapon-Rack-int</object-name>
+     <object-name>Weapon-rack-ext</object-name>
+
+     <object-name>ngww</object-name>
+	<condition>
+	  <not>
+	   <property>sim/current-view/internal</property>
+	  </not>
+	</condition>
+   </animation>
+
+  <model>
+    <name>Cockpit</name>
+    <path>Aircraft/P-8A/Models/cockpit.xml</path>
+    <offsets>
+      <x-m>-18.32</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>passengersseats</name>
+    <path>Aircraft/P-8A/Models/seats/passengers/passenger-seating.xml</path>
+    <condition>
+      <not>
+        <property>controls/switches/increase-fps</property>
+      </not>
+    </condition>
+  </model>
+  <model>
+    <name>LeftWing</name>
+    <path>Aircraft/P-8A/Models/LWing.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>NoseGear</name>
+    <path>Aircraft/P-8A/Models/NoseGear.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>RightWing</name>
+    <path>Aircraft/P-8A/Models/RWing.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>VertStab</name>
+    <path>Aircraft/P-8A/Models/VertStab.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>HorzStab</name>
+    <path>Aircraft/P-8A/Models/HorzStab.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+
+ <model>
+        <name>Pushback</name>
+         <path>Aircraft/P-8A/Models/Autopush/pushback.xml</path>
+       <offsets>
+      <x-m>-16.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-2.75</z-m>
+    </offsets>
+    </model>
+
+
+  <model>
+    <name>Winglet2</name>
+    <path>Aircraft/P-8A/Models/P-8-Winglets.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>material</type>
+    <object-name>lhwinglet.002</object-name>
+    <object-name>rhwinglet.002</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>737-800.png</texture>
+  </animation>
+
+<!--Lights-->
+
+<!-- Navigation Lights -->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/greennav.xml</path>
+  <name>Greenlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/green-navlight.xml</path>
+  <name>Greenlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/rednav.xml</path>
+  <name>Redlight</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/red-navlight.xml</path>
+  <name>Redlight.ALS</name>     
+  <offsets>
+    <x-m>3.60</x-m>
+    <y-m>-17.03</y-m>
+    <z-m>1.06</z-m>       
+  </offsets>
+</model>
+
+<!-- Strobe -->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/strobe.xml</path>
+  <name>strobe.right</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/right-strobe.xml</path>
+  <name>strobe.right.ALS</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/strobe.xml</path>
+  <name>strobe.left</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>     
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/left-strobe.xml</path>
+  <name>strobe.left.ALS</name>     
+  <offsets>
+    <x-m>3.64</x-m>
+    <y-m>-17.01</y-m>
+    <z-m>1.06</z-m>        
+  </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/P-8A/Models/lights/strobe.xml</path>
+  <name>strobe.rear</name>     
+ <offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>
+ </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/tail-strobe.xml</path>
+  <name>strobe.rear.ALS</name>     
+  <offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>     
+  </offsets>
+</model>
+
+<!--Landing Light-->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/landing-stbd.xml</path>
+  <name>landing.LW</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/landinglightL.xml</path>
+  <name>landing.LW.ALS</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>-2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/landing-stbd.xml</path>
+  <name>landing.RW</name>
+  <offsets>
+    <x-m>-4.98</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>        
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/landinglightR.xml</path>
+  <name>landing.RW.ALS</name>
+
+  <offsets>
+    <x-m>-4.90</x-m>
+    <y-m>2.14</y-m>
+    <z-m>-0.51</z-m>      
+  </offsets>
+</model>
+
+<!--Taxi Light-->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/TaxiLight.xml</path>
+  <name>TaxiLight</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/taxilight.xml</path>
+  <name>TaxiLight.ALS</name>
+  <offsets>
+    <x-m>-15.78</x-m>
+    <y-m>0.00</y-m>
+    <z-m>-1.60</z-m>      
+  </offsets>
+</model>
+
+<!--Retractable-landinglight -->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/Retractable-landinglight.xml</path>
+  <name>LeftRBlight</name>
+
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>-1.00</y-m>
+    <z-m>-1.30</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/Retractable-landinglight.xml</path>
+  <name>RightWRBlight</name>
+  <offsets>
+    <x-m>-7.10</x-m>
+    <y-m>1.00</y-m>
+    <z-m>-1.30</z-m>        
+  </offsets>
+</model>
+
+<!-- Beacon -->
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/beacon.xml</path>
+  <name>beacon.top</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
+</model>
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.top.ALS</name>     
+  <offsets>
+    <x-m>0.00</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.57</z-m>      
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/lights/beacon.xml</path>
+  <name>beacon.bottom</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.42</z-m>      
+  </offsets>
+</model>   
+<model>
+  <path>Aircraft/P-8A/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.bottom.ALS</name>     
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m> 0.00</y-m>
+    <z-m>-1.55</z-m>      
+  </offsets>
+</model>
+
+<!--Select animation-->
+<animation>
+    <type>select</type>
+    <object-name>beacon.top</object-name>
+    <object-name>beacon.bottom</object-name>
+    <object-name>Redlight</object-name>
+    <object-name>Greenlight</object-name>
+    <object-name>strobe.left</object-name>
+    <object-name>strobe.right</object-name>
+    <object-name>strobe.rear</object-name>
+    <object-name>landing.LW</object-name>
+    <object-name>landing.RW</object-name>
+    <object-name>TaxiLight</object-name>
+    <condition>
+        <not>
+            <property>sim/rendering/shaders/skydome</property>
+        </not>
+    </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>beacon.top.ALS</object-name>
+    <object-name>beacon.bottom.ALS</object-name>
+    <object-name>Redlight.ALS</object-name>
+    <object-name>Greenlight.ALS</object-name>
+    <object-name>strobe.left.ALS</object-name>
+    <object-name>strobe.right.ALS</object-name>
+    <object-name>strobe.rear.ALS</object-name>
+    <object-name>landing.LW.ALS</object-name>
+    <object-name>landing.RW.ALS</object-name>
+    <object-name>TaxiLight.ALS</object-name>
+    <condition>
+            <property>sim/rendering/shaders/skydome</property>
+    </condition>
+</animation>
+
+
+<!-- Tyre Smoke -->
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyre-smoke-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-18.00</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-5.50</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyre-smoke-left.xml</path>
+  <name>tyre-smoke-l</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>-2.12</y-m>
+    <z-m>-0.51</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyre-smoke-right.xml</path>
+  <name>tyre-smoke-r</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>2.12</y-m>
+    <z-m>0.51</z-m>
+  </offsets>
+</model>
+
+<!-- Tyre Rain -->
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyrespray/rain-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+    <x-m>-18.00</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-5.50</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyrespray/rain-port.xml</path>
+  <name>tyre-smoke-l</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>-2.12</y-m>
+    <z-m>-0.51</z-m>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/tyrespray/rain-stbd.xml</path>
+  <name>tyre-smoke-r</name>
+  <offsets>
+    <x-m>-4.83</x-m>
+    <y-m>2.12</y-m>
+    <z-m>0.51</z-m>
+  </offsets>
+</model>
+
+<!-- Engine Fire -->
+
+<model>
+ <path>Aircraft/P-8A/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>controls/fires/fire/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>fire_1</name>
+<offsets>
+  <x-m>-3.3</x-m>
+  <y-m>-4.73</y-m>
+  <z-m>-1.4</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<model>
+ <path>Aircraft/P-8A/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>controls/fires/fire[1]/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>~fire_1</name>
+<offsets>
+  <x-m>-3.3</x-m>
+  <y-m>4.73</y-m>
+  <z-m>-1.4</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<model>
+ <path>Aircraft/P-8A/Models/Effects/fire.xml</path>
+ <condition>
+   <equals>
+    <property>controls/fires/fire[2]/phase</property>
+    <value>fire</value>
+  </equals>
+</condition>
+<name>~fire_2</name>
+<offsets>
+   <x-m>18.63</x-m>
+   <y-m>0.0</y-m>
+   <z-m>2.06</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<!-- Contrail -->
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/Contrail/contrail.xml</path>
+  <offsets>
+    <x-m>3.3</x-m>
+    <y-m>-4.7632</y-m>
+    <z-m>-1.28782</z-m> 
+    <roll-deg>    0 </roll-deg>
+    <pitch-deg>   0 </pitch-deg>
+    <heading-deg> 0 </heading-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/P-8A/Models/Effects/Contrail/contrail.xml</path>
+  <offsets>
+    <x-m>3.3</x-m>
+    <y-m>4.7713</y-m>
+    <z-m>-1.28753</z-m> 
+    <roll-deg>    0 </roll-deg>
+    <pitch-deg>   0 </pitch-deg>
+    <heading-deg> 0 </heading-deg>
+  </offsets>
+</model>
+
+<!-- Fuel Truck -->
+
+<model>
+  <name>fuel-truck</name>
+  <path>Aircraft/P-8A/Models/Services/Fuel-Truck/Fuel_Truck_Short_VolvoFM.xml</path>
+  <offsets>
+    <x-m>1.8</x-m>
+    <y-m>12</y-m>
+    <z-m>1.81</z-m>
+  </offsets>
+  <condition>
+    <and>
+      <less-than> 
+        <property>velocities/groundspeed-kt</property>
+        <value>1</value>
+      </less-than>
+      <equals>
+       <property>services/fuel-truck/enable</property>
+       <value>1</value>
+     </equals>
+   </and>
+ </condition>
+</model>
+
+<!-- De-icing Truck -->
+
+<model>
+  <name>de-ice-truck</name>
+  <path>Aircraft/P-8A/Models/Services/De-Icing/volvo_deicing_truck.xml</path>
+  <condition>
+    <and>   
+      <equals>
+       <property>services/deicing_truck/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-14</x-m><!--original -15-->
+  <y-m>10</y-m>
+  <z-m>-2.48</z-m>
+  <heading-deg>160</heading-deg>
+</offsets>
+</model>
+
+<!-- Baggage Truck -->
+
+<model>
+  <name>baggage-truck</name>
+  <path>Aircraft/P-8A/Models/Services/Baggage/cargo_ramp.xml</path>
+  <condition>
+    <and>
+      <equals>
+       <property>services/baggage/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-4.2</x-m>
+  <y-m>0</y-m>
+  <z-m>0.95</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<!-- External Power -->
+
+<model>
+  <name>ext-pwr</name>
+  <path>Aircraft/P-8A/Models/Services/External-Power/ext-pwr-box.ac</path>
+  <condition>
+    <and>
+      <equals>
+       <property>services/ext-pwr/enable</property>
+       <value>1</value>
+     </equals>
+     <less-than>  
+      <property>velocities/groundspeed-kt</property>
+      <value>1</value>
+    </less-than>
+  </and>
+</condition>
+<offsets>
+  <x-m>-13</x-m>
+  <y-m>2</y-m>
+  <z-m>2.16</z-m>
+  <heading-deg>0</heading-deg>
+</offsets>
+</model>
+
+<model>
+ <name>Bus</name>
+ <path>Aircraft/P-8A/Models/Services/Bus/bus.xml</path>
+ <condition>
+   <property>controls/switches/bus</property>
+   <less-than>
+    <property>velocities/groundspeed-kt</property>
+    <value>1</value>
+  </less-than>
+</condition>
+<offsets>
+  <x-m>6</x-m>
+  <y-m>-10</y-m>
+  <z-m>-0.2</z-m>
+  <pitch-deg>-1</pitch-deg>
+  <heading-deg>-270</heading-deg>
+</offsets>
+</model>
+
+
+<animation>
+  <type>material</type>
+  <object-name>floor</object-name>
+  <emission>
+    <red>0.9</red>
+    <green>0.75</green>
+    <blue>0.6</blue>
+    </emission>
+     <condition>
+       <property>systems/electrical/on</property>
+    </condition>
+   </animation>
+
+<!-- Services by Gabriel Hernandez(YV399) -->
+
+<model>
+  <path>Aircraft/P-8A/Models/Services/Services.xml</path>
+  <offsets>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>0</z-m>
+  </offsets>
+</model> 
+
+<!-- by RenanMsV and Gabriel Hernandez(YV3399) -->
+<!-- Left front door -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorLF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorLFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <property>controls/doors/LFDoor/LFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLF</object-name>
+  <object-name>doorLF.001</object-name>
+  <property>controls/doors/LFDoor/LFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Left Rear Door -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorLR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorLRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+  <property>controls/doors/LRDoor/LRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorLR</object-name>
+  <object-name>Circle.006</object-name>
+  <property>controls/doors/LRDoor/LRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Right Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorRF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorRFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <property>controls/doors/RFDoor/RFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRF</object-name>
+  <object-name>dorrhfront.005</object-name>
+  <property>controls/doors/RFDoor/RFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Right Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>doorRR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorRRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <property>controls/doors/RRDoor/RRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>doorRR</object-name>
+  <object-name>doorrhrear</object-name>
+  <property>controls/doors/RRDoor/RRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Cargo Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cargodoorF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorCFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorF</object-name>
+  <property>controls/doors/CFDoor/CFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorF</object-name>
+  <property>controls/doors/CFDoor/CFDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Cargo Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>cargodoorR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorCRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorR</object-name>
+  <property>controls/doors/CRDoor/CRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>cargodoorR</object-name>
+  <property>controls/doors/CRDoor/CRDoorPos2/position-norm</property>
+  <factor>1</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Left Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitRF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorELFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRF</object-name>
+  <property>controls/doors/ELFDoor/ELFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRF</object-name>
+  <property>controls/doors/ELFDoor/ELFDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Left Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitLR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorELRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLR</object-name>
+  <property>controls/doors/ELRDoor/ELRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLR</object-name>
+  <property>controls/doors/ELRDoor/ELRDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Right Front -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitLF</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorERFtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLF</object-name>
+  <property>controls/doors/ERFDoor/ERFDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitLF</object-name>
+  <property>controls/doors/ERFDoor/ERFDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+<!-- Emergency Right Rear -->
+
+<animation>
+  <type>pick</type>
+  <visible>true</visible>
+  <object-name>EexitRR</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>true</repeatable> 
+   <binding> 
+    <command>nasal</command>
+    <script>
+      boeing737.doorERRtoggle();
+    </script>
+  </binding>
+</action>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRR</object-name>
+  <property>controls/doors/ERRDoor/ERRDoorPos1/position-norm</property>
+  <factor>0.05</factor>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+ </axis>
+</animation>
+<animation>
+  <type>translate</type>
+  <object-name>EexitRR</object-name>
+  <property>controls/doors/ERRDoor/ERRDoorPos2/position-norm</property>
+  <factor>0.5</factor>
+  <axis>
+   <x>1</x>
+   <y>0</y>
+   <z>0</z>
+ </axis>
+</animation>
+
+  <!-- Electro-Optical/Infrared Multispectral Sensor -->
+  <model>
+    <name>FLIR</name>
+    <path>Radar/flir.xml</path>
+    <offsets>
+      <x-m> -11.180 </x-m>
+      <y-m>   0.000 </y-m>
+      <z-m>  -1.200 </z-m>
+    </offsets>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 2.5 </x-offset>
+        <y-offset> 2.5 </y-offset>
+        <z-offset> 2.5 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <!-- This Electro-Optical/Infrared Multispectral Sensor turret use a simple Show/Hide command for simulate the retraction. This is indeed to be a temporary solution, but it works fine, so it could remain indefinitely... -->
+  <animation>
+    <type>select</type>
+    <object-name>FLIR</object-name>
+    <condition>
+      <property>sim/model/hide-flir</property>
+    </condition>
+  </animation>
+
+  <!-- Special Mission POD - (Littoral Radar AN/APS-154) -->
+  <model>
+    <name>Littoral</name>
+    <path>Radar/Littoral_Radar.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Littoral</object-name>
+    <condition>
+      <property>sim/model/hide-littoral</property>
+    </condition>
+  </animation>
+
+  <!-- Radio-Frequencies Countermeasures POD (AN/ALE-55) -->
+  <model>
+    <name>RFCM</name>
+    <path>Radar/RFCM.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>RFCM</object-name>
+    <condition>
+      <property>sim/model/hide-RFCM</property>
+    </condition>
+  </animation>
+
+  <!-- Multi-Mission POD -->
+  <model>
+    <name>MultiMission</name>
+    <path>Radar/MultiMission.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MultiMission</object-name>
+    <condition>
+      <property>sim/model/hide-multimission</property>
+    </condition>
+  </animation>
+
+  <!-- BACN POD -->
+  <model>
+    <name>BACN</name>
+    <path>Radar/BACN.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>BACN</object-name>
+    <condition>
+      <property>sim/model/hide-BACN</property>
+    </condition>
+  </animation>
+
+  <!-- Upper Radome (MUOS) -->
+  <model>
+    <name>MUOS</name>
+    <path>Radar/MUOS.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MUOS</object-name>
+    <condition>
+      <property>sim/model/hide-MUOS</property>
+    </condition>
+  </animation>
+
+  <!-- Rear Set of Antennas (TACAMO) -->
+  <model>
+    <name>TACAMO</name>
+    <path>Radar/TACAMO.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>TACAMO</object-name>
+    <condition>
+      <property>sim/model/hide-TACAMO</property>
+    </condition>
+  </animation>
+
+  <!-- ESM Radome (ALR-66) -->
+  <model>
+    <name>ESM-2</name>
+    <path>Radar/ESM.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>ESM-2</object-name>
+    <condition>
+      <property>sim/model/hide-ESM</property>
+    </condition>
+  </animation>
+
+  <!-- A/G Missile: AGM-84 Harpoon -->
+  <model>
+    <name>Pylons</name>
+    <path>Effects/Weapons/Pylons.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Harpoon-L1</name>
+    <path>Effects/Weapons/AGM-84.xml</path>
+    <offsets>
+      <x-m>   0.61524 </x-m>
+      <y-m> -10.41600 </y-m>
+      <z-m>  -0.30967 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Harpoon-L2</name>
+    <path>Effects/Weapons/AGM-84.xml</path>
+    <offsets>
+      <x-m> -0.63017 </x-m>
+      <y-m> -7.82110 </y-m>
+      <z-m> -0.61221 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Harpoon-R1</name>
+    <path>Effects/Weapons/AGM-84.xml</path>
+    <offsets>
+      <x-m>   0.61524 </x-m>
+      <y-m>  10.41600 </y-m>
+      <z-m>  -0.30967 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>Harpoon-R2</name>
+    <path>Effects/Weapons/AGM-84.xml</path>
+    <offsets>
+      <x-m> -0.63017 </x-m>
+      <y-m>  7.82110 </y-m>
+      <z-m> -0.61221 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+        <type>select</type>
+        <object-name>Harpoon-L1</object-name>
+        <object-name>Harpoon-L2</object-name>
+        <!-- <object-name>Harpoon-R1</object-name> -->
+        <object-name>Harpoon-R2</object-name>
+        <object-name>Pylons</object-name>
+        <condition>
+            <property>sim/model/hide-Harpoon</property>
+        </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Harpoon-R1</object-name>
+    <condition>
+      <property>sim/model/hide-Harpoon</property>
+      <not>
+        <property>sim/model/hide-RFCM</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Harpoon-L1</object-name>
+    <condition>
+      <not><property>controls/signal1</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Harpoon-L2</object-name>
+    <condition>
+      <not><property>controls/signal2</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Harpoon-R1</object-name>
+    <condition>
+      <not><property>controls/signal3</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>Harpoon-R2</object-name>
+    <condition>
+      <not><property>controls/signal4</property></not>
+    </condition>
+  </animation>
+
+</PropertyList>

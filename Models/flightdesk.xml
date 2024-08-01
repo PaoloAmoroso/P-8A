@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>flightdesk.ac</path>
+
+ <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+            <image>Aircraft/P-8A/Models/Effects/InternalLightMap/pedestal.png</image>
+            </texture>
+            <factor><use>/controls/lighting/panel-light</use></factor>
+      </parameters>
+      <object-name>Plane.001</object-name>
+    </effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>WARNINGS</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>WARNINGS</name>
+        <path>Models/Instruments/WEU/warning-unit.xml</path>
+        <offsets>
+            <x-m>0.0</x-m>
+            <y-m>0.00</y-m>
+            <z-m>0.000</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+   <animation>
+        <type>select</type>
+        <object-name>LMFD</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>LMFD</name>
+        <path>Models/Instruments/LMFD/LMFD.xml</path>
+        <offsets>
+            <x-m>-0.015</x-m>
+            <y-m>-0.156</y-m>
+            <z-m> 0.060</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+        <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 0.43 </x-offset>
+        <y-offset> 0.43 </y-offset>
+        <z-offset> 0.43 </z-offset>
+      </animation>
+    </overlay>
+    </model>
+
+   <animation>
+        <type>select</type>
+        <object-name>AUTOPILOT</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+    
+    <model>
+        <name>AUTOPILOT</name>
+        <path>Models/Instruments/autopilot-panel.xml</path>
+        <offsets>
+            <x-m>0.130</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>0.153</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>PFD1</name>
+        <path>Models/Instruments/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>-0.026</x-m>
+            <y-m>-0.532</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>PFD2</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>PFD2</name>
+        <path>Models/Instruments/PFD/PFD.xml</path>
+        <offsets>
+            <x-m>-0.026</x-m>
+            <y-m>0.489</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ND1</name>
+        <path>Models/Instruments/ND/nd_l.xml</path>
+        <offsets>
+            <x-m>-0.026</x-m>
+            <y-m>-0.318</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ND2</name>
+        <path>Models/Instruments/ND/nd_r.xml</path>
+        <offsets>
+            <x-m>-0.026</x-m>
+            <y-m>0.276</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>EICAS</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>EICAS</name>
+        <path>Models/Instruments/EICAS/eicas.xml</path>
+        <offsets>
+            <x-m>-0.026</x-m>
+            <y-m>0.002</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>cap-CLOCK</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>cap-CLOCK</name>
+        <path>Models/Instruments/CLOCK/chronometer.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>-0.689</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>fo-CLOCK</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>fo-CLOCK</name>
+        <path>Models/Instruments/CLOCK/chronometer.xml</path>
+        <offsets>
+            <x-m>-0.02</x-m>
+            <y-m>0.651</y-m>
+            <z-m>-0.062</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>STANDBY-AH</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>STANDBY-AH</name>
+        <path>Models/Instruments/STANDBYAI/standby.xml</path>
+        <offsets>
+            <x-m>-0.045</x-m>
+            <y-m>-0.156</y-m>
+            <z-m>-0.035</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>STANDBY-VOR</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>STANDBY-VOR</name>
+        <path>Models/Instruments/STANDBY/vor.xml</path>
+        <offsets>
+            <x-m>-0.045</x-m>
+            <y-m>-0.156</y-m>
+            <z-m>-0.123</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>autobrake</object-name>
+        <property>controls/gear/autobrakes</property>
+        <factor>-45</factor>
+        <center>
+            <x-m>-6.943</x-m>
+            <y-m>0.0212</y-m>
+            <z-m>0.07033</z-m>
+        </center>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FlapNeedle</object-name>
+        <property>surface-positions/flap-pos-norm[0]</property>
+        <interpolation>
+            <entry><ind>  0.000</ind><dep> 0.0</dep></entry>
+            <entry><ind>  0.125</ind><dep> -38.0</dep></entry>
+            <entry><ind>  0.250</ind><dep> -82.0</dep></entry>
+            <entry><ind>  0.375</ind><dep> -115.0</dep></entry>
+            <entry><ind>  0.500</ind><dep> -153.0</dep></entry>
+            <entry><ind>  0.625</ind><dep> -182.0</dep></entry>
+            <entry><ind>  0.750</ind><dep> -212.0</dep></entry>
+            <entry><ind>  0.875</ind><dep> -243.0</dep></entry>
+            <entry><ind>  1.000</ind><dep> -273.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-6.94</x-m>
+            <y-m>0.081</y-m>
+            <z-m>0.07277</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>lghandle</object-name>
+        <property>b737/controls/gear/lever</property>
+        <interpolation>
+            <entry><ind>  0</ind><dep> 10.0</dep></entry>
+            <entry><ind>  1</ind><dep>-45.0</dep></entry>
+            <entry><ind>  2</ind><dep>-22.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.102</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.000</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+<!-- Illumination -->
+
+<!-- Flaps Instrument -->
+
+ <animation>
+        <type>material</type>
+        <object-name>Circle.173</object-name>
+        <object-name>FlapsNeedle</object-name>
+  <emission>
+    <red>1.055</red>
+    <green>0.512</green>
+    <blue>0.307</blue>
+	    <factor-prop>/controls/lighting/panel</factor-prop>
+ </emission>
+   </animation>
+   
+   <animation>
+        <type>knob</type>
+        <object-name>Circle.230</object-name>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.030001</y-m>
+            <z-m>0.087512</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+		<property>/controls/fmc/v-speed-mode</property>
+        <factor>45</factor>
+	    <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/fmc/v-speed-mode</property>
+                <offset>1</offset>
+				<min>0</min>
+				<max>6</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+		<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>v-speed-mode</tooltip-id>
+                <label>VSpeed Mode</label>
+            </binding>
+        </hovered>
+    </animation>
+	
+    <animation>
+        <type>knob</type>
+        <object-name>Circle.229</object-name>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.030001</y-m>
+            <z-m>0.087512</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis><property>/controls/fmc/v-speed-bug</property>
+        <factor>4.32</factor>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/fmc/v-speed-bug</property>
+                <offset>1</offset>
+                <min>0</min>
+                <max>400</max>                
+                <wrap>0</wrap>
+            </binding>
+        </action>
+		<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>v-speed-selector</tooltip-id>
+                <label>VSpeed Selector</label>
+            </binding>
+        </hovered>
+    </animation>
+
+
+</PropertyList>

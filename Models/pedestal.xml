@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <path>pedestal.ac</path>
+    <animation>
+        <type>select</type>
+        <object-name>EICAS2</object-name>
+        <condition>
+            <property>sim/current-view/internal</property>
+        </condition>
+    </animation>
+
+    <model>
+        <name>EICAS2</name>
+        <path>Models/Instruments/EICAS_Lower/eicas.xml</path>
+        <offsets>
+            <x-m>0.426</x-m>
+            <y-m>-0.021</y-m>
+            <z-m>0.738</z-m>
+            <pitch-deg>299.5</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+        <name>CDU1</name>
+        <path>Aircraft/P-8A/Models/Instruments/CDU/boeing.xml</path>
+        <offsets>
+            <x-m>0.460</x-m>
+            <y-m>-0.203</y-m>
+            <z-m>0.725</z-m>
+            <pitch-deg>299.5</pitch-deg>
+        </offsets>
+        <overlay>
+            <texture>boeing_grey.png</texture>
+        </overlay>
+    </model>
+	
+    <model>
+        <name>CDU2</name>
+        <path>Aircraft/P-8A/Models/Instruments/CDU/boeing.xml</path>
+        <offsets>
+            <x-m>0.460</x-m>
+            <y-m>0.162</y-m>
+            <z-m>0.725</z-m>
+            <pitch-deg>299.5</pitch-deg>
+        </offsets>
+        <overlay>
+            <texture>boeing_grey.png</texture>
+        </overlay>
+    </model>
+	
+<animation>
+  <type>knob</type>
+  <object-name>AFDSbrt</object-name>
+  <property>controls/lighting/panel</property>
+  <factor>250</factor>
+  <center>
+    <x-m>0.37235</x-m>
+    <y-m>-0.32026</y-m>
+    <z-m>0.73127</z-m>
+  </center>
+  <axis>
+    <x>-0.5</x><y></y><z>-1</z>
+  </axis>
+
+  <action>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/panel</property>
+      <factor>0.05</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </action>
+  <shift-action>
+    <binding>
+      <command>property-adjust</command>
+      <property>controls/lighting/panel</property>
+      <factor>0.1</factor>
+      <min>0</min>
+      <max>1</max>                
+      <wrap>false</wrap>
+    </binding>
+  </shift-action>
+  <increase>
+  </increase>
+  <decrease>
+  </decrease>
+</animation>
+
+<animation>
+        <type>pick</type>
+        <object-name>parkbrake_1</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+           <binding>
+    		<command>property-toggle</command>
+   		 <property>controls/gear/brake-parking</property> 
+                  <min>0</min>
+    		 <max>1</max>    		  
+    		 <wrap>false</wrap>
+   	</binding>
+       </action>
+    </animation>                  
+
+<animation>
+  <type>pick</type>   
+  <object-name>parkbrake_0</object-name>
+   <property>controls/gear/brake-parking</property> 
+    <factor>45</factor>    
+  <center>
+   <x-m>0.81</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.66</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>parkbrake_1</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>45</factor>
+        <center>
+            <x-m>0.81</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.66</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+  <animation>
+    <type>rotate</type>
+    <object-name>trimwheellh</object-name>   
+    <object-name>trimwheelrh</object-name>   
+    <property>controls/flight/elevator-trim</property>
+    <factor>-10500</factor>
+    <center>
+      <x-m>0.68</x-m>
+      <y-m>0.073</y-m>
+      <z-m>0.66073</z-m>
+    </center>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<animation>
+  <type>material</type>
+  <object-name>sbhandle</object-name>
+  <object-name>handle</object-name>
+   <object-name>No1-knob</object-name>
+  <object-name>No2-knob</object-name>
+   <object-name>no1revarm</object-name>
+  <object-name>no2revarm</object-name>
+   <object-name>trimwheellh</object-name>
+  <object-name>trimheelrh</object-name>
+  <emission>
+    <red>0.18</red>
+    <green>0.18</green>
+    <blue>0.18</blue>
+  </emission>
+ <condition>
+       <property>controls/lighting/panel</property>
+    </condition>
+</animation>
+ 
+      <!-- Controls -->
+
+<animation>
+<type>material</type> 
+<object-name>break</object-name>
+ <condition>
+ <property>controls/gear/brake-parking</property> 
+ </condition>
+<emission>
+    <red>4.90</red>
+    <green>0.01</green>
+    <blue>0.01</blue>
+	    <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+ </emission>
+</animation>
+
+
+</PropertyList>
