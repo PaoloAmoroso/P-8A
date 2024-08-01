@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- B738 Aircraft Config Dialog -->
+
+<PropertyList>
+
+	<name>aircraft-config-help</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Help</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>vbox</layout>
+		
+		<!-- <text>
+			<halign>left</halign>
+			<label>Information:</label>
+		</text> -->
+		
+		<text>
+			<halign>left</halign>
+			<label>Boeing P-8A Poseidon - Based on 737-800YV Pre 1.0</label>
+		</text>
+		
+		<hrule/>
+		
+		<text>
+			<halign>left</halign>
+			<label>Key Commands:</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>DEL - Toggle Reverse Thrust</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>CTRL + B - Cycle Spoilers</label>
+		</text>
+		<text>
+			<halign>left</halign>
+			<label>SHIFT + B - Toggle Parking Brake</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + Q - Reset View</label>
+		</text>
+
+           <hrule/>
+
+           <text>
+			<halign>left</halign>
+			<label>Operations Key Commands:</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + F - FLIR Retraction</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>  q - Release Flares</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>  i - SAR Life Raft</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + S - Release Sonobuoy</label>
+		</text>
+
+           <hrule/>
+
+           <text>
+			<halign>left</halign>
+			<label>Weapons Key Commands:</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + H - Pylon 1 Launch</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + N - Pylon 2 Launch</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + M - Pylon 3 Launch</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + K - Pylon 4 Launch</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + I - Release Torpedo</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + U - Release Bomb</label>
+		</text>
+           <text>
+			<halign>left</halign>
+			<label>Alt + J - Reload Weapons</label>
+		</text>
+		
+	</group>
+	
+</PropertyList>
