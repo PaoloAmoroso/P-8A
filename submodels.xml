@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+<!--  Submodels are objects which can be dropped or launched from the user aircraft.
+      The trigger is a boolean property, which you define, which when "true" causes
+      the submodel to be released/launched. 
+      A submodel will create an AIBallistic object which will follow a ballistic path.
+      By default one submodel will be released when the corresponding trigger is "true".
+      The initial conditions (IC) define the object's starting point (relative to the
+      user aircraft's "reported position"), and its initial speed and direction
+      (relative to the user aircraft).  If you want to release many similar objects
+      with similar IC, then you may use the <repeat>, <delay> and <count> properties
+      to define this.  The allowed properties are:
+
+      <name>         The name of the submodel.
+      <model>        The path to the visual model.
+      <trigger>      The property which will act as the trigger. 
+      <speed>        Initial speed, in feet/sec, relative to user aircraft.
+      <repeat>       Set "true" if you want multiple releases of this submodel.
+      <delay>        Time, in seconds, between repeated releases.
+      <count>        Number of submodels available for multiple release.
+      <slaved>       Not used yet.
+      <x-offset>     Submodel's initial fore/aft position relative to user aircraft.  
+                     Fore is positive.
+      <y-offset>     Submodel's initial left/right position relative to user aircraft.  
+                     Right is positive.
+      <z-offset>     Submodel's initial up/down position relative to user aircraft.  
+                     Up is positive.
+      <yaw-offset>   Submodel's initial azimuth, in degrees, relative to user aircraft's
+                     nose.  Right is positive.
+      <pitch-offset> Submodel's initial elevation, in degrees, relative to user aircraft's
+                     pitch.  Up is positive.
+      <eda>          Equivalent Drag Area in ft squared.  The object is assumed to have a 
+                     mass of 0.03 slugs and a drag coefficient of 0.295, and sea-level air
+                     density is assumed.  Adjust the EDA to give the model the ballistics you need.
+                     The default value is 0.007.
+      <life>         Life span in seconds.  Default is 900.0.
+      <buoyancy>     In ft/sec/sec.  Works opposite acceleration of gravity.  For example, if
+                     set to 32 the submodel will feel no gravity. If greater than 32 the object
+                     will rise. Default is 0.
+      <wind>         Set to true if you want the submodel to react to the wind.  Default is "false". 
+-->  
+ 
+<PropertyList>
+
+  <!-- Contrails -->
+  <submodel>
+    <name>left engine contrail</name>
+    <model>Models/Geometry/contrail.xml</model>
+    <trigger>sim/ai/submodels/contrails</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.1</delay>
+    <count>-1</count>
+    <x-offset>-7.0</x-offset>
+    <y-offset>-16.0</y-offset>
+    <z-offset>0.0</z-offset>
+		<yaw-offset>180</yaw-offset>
+    <life>12</life>
+    <buoyancy>32.0</buoyancy>
+    <aero-stabilised>0</aero-stabilised>
+    <wind>true</wind>
+		<eda>10</eda>
+		<cd>0.5</cd>
+		<weight>10</weight>
+		<random>1</random>
+  </submodel>
+
+  <submodel>
+    <name>right engine contrail</name>
+    <model>Models/Geometry/contrail.xml</model>
+    <trigger>sim/ai/submodels/contrails</trigger>
+    <speed>10</speed>
+    <repeat>true</repeat>
+    <delay>0.1</delay>
+    <count>-1</count>
+    <x-offset>-7.0</x-offset>
+    <y-offset>16.0</y-offset>
+    <z-offset>0.0</z-offset>
+		<yaw-offset>180</yaw-offset>
+    <life>12</life>
+    <buoyancy>32</buoyancy>
+    <aero-stabilised>0</aero-stabilised>
+    <wind>true</wind>
+		<eda>10</eda>
+		<cd>0.5</cd>
+		<weight>10</weight>
+		<random>1</random>
+  </submodel>
+
+  <submodel>
+    <name>flaresL</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/flare.xml</model>
+    <trigger>/controls/armament/flares-release</trigger>
+    <speed>40</speed>
+    <repeat>true</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset> -9.6  </x-offset>
+    <y-offset> -5.8 </y-offset>
+    <z-offset>  7.10 </z-offset>
+    <yaw-offset>260.0</yaw-offset>
+    <pitch-offset>-50</pitch-offset> 
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>0.2</eda>
+    <collision>false</collision>
+  </submodel>
+
+  <!-- Flares -->
+  <submodel>
+    <name>flaresR</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/flare.xml</model>
+    <trigger>/controls/armament/flares-release</trigger>
+    <speed>40</speed>
+    <repeat>true</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset> -9.6 </x-offset>
+    <y-offset>  5.8 </y-offset>
+    <z-offset>  7.10 </z-offset>
+    <yaw-offset>100.0</yaw-offset>
+    <pitch-offset>-50</pitch-offset> 
+    <life>5</life>
+    <buoyancy>8</buoyancy>
+    <eda>0.2</eda>
+    <collision>false</collision>
+  </submodel>
+
+  <!-- Sonobuoys -->
+  <submodel>
+    <name>Sonobuoy</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/Sonobuoy.xml</model>
+    <trigger>controls/armament/sonobuoy-release</trigger>
+    <speed>15</speed>
+    <repeat>true</repeat>
+    <delay>0.5</delay>
+    <count>-1</count>
+    <x-offset> -20 </x-offset>
+    <y-offset>  -1 </y-offset>
+    <z-offset>   2 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>1.2</cd>
+    <eda>0.5</eda>
+    <weight>0</weight>
+    <wind>false</wind>
+    <buoyancy>20</buoyancy>
+    <life>200</life>
+  </submodel>
+
+  <!-- AGM-84 Harpoon Missile Launch -->
+  <submodel>
+    <name>Harpoon release 1</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-84.xml</model>
+    <trigger>controls/signal1</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset>   2.0185 </x-offset>
+    <y-offset> -34.1732 </y-offset>
+    <z-offset>  -1.0160 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>Harpoon release 2</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-84.xml</model>
+    <trigger>controls/signal2</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset>  -2.0675 </x-offset>
+    <y-offset> -25.6598 </y-offset>
+    <z-offset>  -2.0086 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>Harpoon release 3</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-84.xml</model>
+    <trigger>controls/signal3</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset>  -2.0675 </x-offset>
+    <y-offset>  25.6598 </y-offset>
+    <z-offset>  -2.0086 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>Harpoon release 4</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-84.xml</model>
+    <trigger>controls/signal4</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <x-offset>  -6.0810 </x-offset>
+    <y-offset>  13.1899 </y-offset>
+    <z-offset>  -3.2165 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <!-- MU90 Torpedo Launch -->
+  <submodel>
+    <name>Torpedo release</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/MU90.xml</model>
+    <trigger>/controls/armament/torpedo-release</trigger>
+    <speed-prop>
+      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.1</delay>
+    <count>-1</count>
+    <x-offset> -9.8000 </x-offset>
+    <y-offset>  0.0000 </y-offset>
+    <z-offset> -3.6621 </z-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>2000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <!-- GBU-12 Launch -->
+  <submodel>
+    <name>Bomb release</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/GBU-12.xml</model>
+    <trigger>/controls/armament/bomb-release</trigger>
+    <speed-prop>
+      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.1</delay>
+    <count>-1</count>
+    <x-offset> -9.8000 </x-offset>
+    <y-offset>  0.0000 </y-offset>
+    <z-offset> -3.6621 </z-offset>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>5000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <!-- SAR Life Raft Launch -->
+  <submodel>
+    <name>SAR Raft release</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/SAR/SAR_Raft.xml</model>
+    <trigger>/controls/armament/raft-release</trigger>
+    <speed-prop>
+      <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    </speed-prop>
+    <repeat>false</repeat>
+    <delay>0.1</delay>
+    <count>-1</count>
+    <x-offset> -9.8000 </x-offset>
+    <y-offset>  0.0000 </y-offset>
+    <z-offset> -3.6621 </z-offset>
+    <cd>0.295</cd>
+    <weight>300</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>2000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/SAR/SAR_Operation.xml</submodel-path>
+  </submodel>
+
+</PropertyList>
