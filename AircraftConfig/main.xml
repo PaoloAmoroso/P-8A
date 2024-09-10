@@ -354,10 +354,44 @@
 				<halign>left</halign>
 				<label>AGM-84 Harpoon</label>
 				<property>sim/model/hide-Harpoon</property>
+                      <live>true</live>
 				<binding>
 					<command>property-toggle</command>
 					<property>sim/model/hide-Harpoon</property>
 				</binding>
+                      <binding>
+                           <command>property-assign</command>
+                           <property>sim/model/hide-AARGM</property>
+                           <value>0</value>
+                      </binding>
+                      <binding>
+                           <command>nasal</command>
+                      </binding>
+                      <binding>
+                           <command>dialog-update</command>
+                      </binding>
+			</checkbox>
+
+                <checkbox>
+				<halign>left</halign>
+				<label>AGM-88G AARGM-ER</label>
+				<property>sim/model/hide-AARGM</property>
+                      <live>true</live>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/hide-AARGM</property>
+				</binding>
+                      <binding>
+                           <command>property-assign</command>
+                           <property>sim/model/hide-Harpoon</property>
+                           <value>0</value>
+                      </binding>
+                      <binding>
+                           <command>nasal</command>
+                      </binding>
+                      <binding>
+                           <command>dialog-update</command>
+                      </binding>
 			</checkbox>
 			
 			<hrule/>
