@@ -853,34 +853,102 @@
         <command>property-assign</command>
         <property>controls/signal1</property>
         <value>true</value>
-      </binding>
+        <condition>
+            <and>
+                <property>sim/model/hide-Harpoon</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/signal5</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/hide-AARGM</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
     </key>
 
-     <key n="78">
+    <key n="78">
       <name>N</name>
       <binding>
         <command>property-assign</command>
         <property>controls/signal2</property>
         <value>true</value>
-      </binding>
+        <condition>
+            <and>
+                <property>sim/model/hide-Harpoon</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/signal6</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/hide-AARGM</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
     </key>
 
      <key n="75">
       <name>K</name>
       <binding>
         <command>property-assign</command>
-        <property>controls/signal3</property>
+        <property>controls/signal4</property>
         <value>true</value>
-      </binding>
+        <condition>
+            <and>
+                <property>sim/model/hide-Harpoon</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/signal8</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/hide-AARGM</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
     </key>
 
     <key n="77">
       <name>M</name>
       <binding>
         <command>property-assign</command>
-        <property>controls/signal4</property>
+        <property>controls/signal3</property>
         <value>true</value>
-      </binding>
+        <condition>
+            <and>
+                <property>sim/model/hide-Harpoon</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
+    <binding>
+        <command>property-assign</command>
+        <property>controls/signal7</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/hide-AARGM</property>
+                <value>true</value>
+            </and>
+        </condition>
+    </binding>
     </key>
 
     <key n="74">
@@ -903,6 +971,26 @@
         <binding>
           <command>property-assign</command>
           <property>controls/signal4</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal5</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal6</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal7</property>
+          <value>0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/signal8</property>
           <value>0</value>
         </binding>
     </key>
@@ -1114,6 +1202,11 @@
 			<serviceable type="bool">true</serviceable>
 		</static>
 	</systems>
+
+     <radar>
+			<enabled type="bool">false</enabled>			
+			<range type="double">150</range>
+     </radar>
 
 	<instrumentation>
 		<adf>

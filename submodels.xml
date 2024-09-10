@@ -253,6 +253,111 @@
     <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
   </submodel>
 
+  <!-- AGM-88 AARGM-ER Missile Launch -->
+  <submodel>
+    <name>AARGM release 1</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-88.xml</model>
+    <trigger>controls/signal5</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <offsets>
+      <x-m>   0.40496 </x-m>
+      <y-m> -10.41600 </y-m>
+      <z-m>  -0.27850 </z-m>
+    </offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AARGM release 2</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-88.xml</model>
+    <trigger>controls/signal6</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <offsets>
+      <x-m> -1.01020 </x-m>
+      <y-m> -7.81510 </y-m>
+      <z-m> -0.57903 </z-m>
+    </offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AARGM release 3</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-88.xml</model>
+    <trigger>controls/signal7</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <offsets>
+      <x-m>  0.40496 </x-m>
+      <y-m> 10.41600 </y-m>
+      <z-m> -0.27850 </z-m>
+    </offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
+  <submodel>
+    <name>AARGM release 4</name>
+    <model>Aircraft/P-8A/Models/Effects/Weapons/AGM-88.xml</model>
+    <trigger>controls/signal8</trigger>
+    <speed>787</speed>
+    <repeat>false</repeat>
+    <delay>0.2</delay>
+    <count>-1</count>
+    <offsets>
+      <x-m> -1.01020 </x-m>
+      <y-m>  7.81510 </y-m>
+      <z-m> -0.57903 </z-m>
+    </offsets>
+    <cd>0.295</cd>
+    <weight>500</weight>
+    <fuse-range>2.2</fuse-range>
+    <eda>0.61629</eda>
+    <life>1000</life>
+    <buoyancy>0</buoyancy>
+    <aero-stabilised>true</aero-stabilised>
+    <collision>true</collision>
+    <impact>true</impact>
+    <impact-reports>ai/models/model-impact</impact-reports>
+    <submodel-path>Aircraft/P-8A/Models/Effects/Weapons/Impact/bomb-impact.xml</submodel-path>
+  </submodel>
+
   <!-- MU90 Torpedo Launch -->
   <submodel>
     <name>Torpedo release</name>
