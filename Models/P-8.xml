@@ -1389,16 +1389,24 @@
     </condition>
   </animation>
 
-  <!-- A/G Missile: AGM-84 Harpoon -->
+  <!-- Pylons -->
   <model>
     <name>Pylons</name>
     <path>Effects/Weapons/Pylons.xml</path>
-    <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </offsets>
   </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Pylons</object-name>
+    <condition>
+      <or>
+        <property>sim/model/hide-Harpoon</property>
+        <property>sim/model/hide-AARGM</property>
+      </or>
+    </condition>
+</animation>
+
+  <!-- A/G Missile: AGM-84 Harpoon -->
 
   <model>
     <name>Harpoon-L1</name>
@@ -1450,7 +1458,7 @@
         <object-name>Harpoon-L2</object-name>
         <!-- <object-name>Harpoon-R1</object-name> -->
         <object-name>Harpoon-R2</object-name>
-        <object-name>Pylons</object-name>
+        <!-- <object-name>Pylons</object-name> -->
         <condition>
             <property>sim/model/hide-Harpoon</property>
         </condition>
@@ -1496,6 +1504,106 @@
     <object-name>Harpoon-R2</object-name>
     <condition>
       <not><property>controls/signal4</property></not>
+    </condition>
+  </animation>
+
+  <!-- A/G Missile: AGM-88G AARGM-ER -->
+  <model>
+    <name>AARGM-L1</name>
+    <path>Effects/Weapons/AGM-88.xml</path>
+    <offsets>
+      <x-m>   0.40496 </x-m>
+      <y-m> -10.41600 </y-m>
+      <z-m>  -0.27850 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>AARGM-L2</name>
+    <path>Effects/Weapons/AGM-88.xml</path>
+    <offsets>
+      <x-m> -1.01020 </x-m>
+      <y-m> -7.81510 </y-m>
+      <z-m> -0.57903 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>AARGM-R1</name>
+    <path>Effects/Weapons/AGM-88.xml</path>
+    <offsets>
+      <x-m>  0.40496 </x-m>
+      <y-m> 10.41600 </y-m>
+      <z-m> -0.27850 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <name>AARGM-R2</name>
+    <path>Effects/Weapons/AGM-88.xml</path>
+    <offsets>
+      <x-m> -1.01020 </x-m>
+      <y-m>  7.81510 </y-m>
+      <z-m> -0.57903 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+        <type>select</type>
+        <object-name>AARGM-L1</object-name>
+        <object-name>AARGM-L2</object-name>
+        <!-- <object-name>AARGM-R1</object-name> -->
+        <object-name>AARGM-R2</object-name>
+        <!-- <object-name>Pylons</object-name> -->
+        <condition>
+            <property>sim/model/hide-AARGM</property>
+        </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AARGM-R1</object-name>
+    <condition>
+      <property>sim/model/hide-AARGM</property>
+      <not>
+        <property>sim/model/hide-RFCM</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AARGM-L1</object-name>
+    <condition>
+      <not><property>controls/signal5</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AARGM-L2</object-name>
+    <condition>
+      <not><property>controls/signal6</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AARGM-R1</object-name>
+    <condition>
+      <not><property>controls/signal7</property></not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>AARGM-R2</object-name>
+    <condition>
+      <not><property>controls/signal8</property></not>
     </condition>
   </animation>
 
