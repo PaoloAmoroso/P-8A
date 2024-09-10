@@ -1300,7 +1300,7 @@
     <!-- WEAPONS SOUND -->
 
     <rocket-single>
-      <name>rocket-single1L</name>
+      <name>rocket-singleA1L</name>
       <mode>once</mode>
       <path>rockets.wav</path>
       <condition>
@@ -1315,7 +1315,7 @@
     </rocket-single>
 
     <rocket-single>
-      <name>rocket-single2L</name>
+      <name>rocket-singleA2L</name>
       <mode>once</mode>
       <path>rockets.wav</path>
       <condition>
@@ -1330,7 +1330,7 @@
     </rocket-single>
 
     <rocket-single>
-      <name>rocket-single1R</name>
+      <name>rocket-singleA1R</name>
       <mode>once</mode>
       <path>rockets.wav</path>
       <condition>
@@ -1345,11 +1345,71 @@
     </rocket-single>
 
     <rocket-single>
-      <name>rocket-single2R</name>
+      <name>rocket-singleA2R</name>
       <mode>once</mode>
       <path>rockets.wav</path>
       <condition>
         <property>controls/signal4</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleB1L</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal5</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleB2L</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal6</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-single1BR</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal7</property>
+      </condition>
+      <volume>
+        <factor>1.0</factor>
+        <max>3.0</max>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </rocket-single>
+
+    <rocket-single>
+      <name>rocket-singleB2R</name>
+      <mode>once</mode>
+      <path>rockets.wav</path>
+      <condition>
+        <property>controls/signal8</property>
       </condition>
       <volume>
         <factor>1.0</factor>
