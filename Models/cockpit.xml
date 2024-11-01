@@ -16,6 +16,19 @@
 		</axis>
 	</animation>
 
+	<model>
+		<name>WindShield</name>
+		<path>Aircraft/P-8A/Models/Instruments/WindShield.ac</path>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>WindShield</object-name>
+		<condition>
+			<property>sim/current-view/internal</property>
+		</condition>
+	</animation>
+
       <model>
         <name>flightdesk</name>
         <path>flightdesk.xml</path>
