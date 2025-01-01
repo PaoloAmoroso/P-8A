@@ -270,6 +270,17 @@
 		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
 
+	     <systems>
+		     <refuel>
+			     <type>boom</type>
+			     <serviceable type="bool">true</serviceable>
+			     <max-fuel-transfer-lbs-min>6400</max-fuel-transfer-lbs-min>
+			     <offset-x-m>0</offset-x-m>
+			     <offset-y-m>0</offset-y-m>
+			     <offset-z-m>1</offset-z-m>
+		     </refuel>  
+	     </systems>
+
 	<lighting>
 		<interior type="double">0</interior>
 		<panel-norm>0.2</panel-norm>
@@ -1490,6 +1501,9 @@
         <terrain-map>
             <file>Aircraft/P-8A/Nasal/terrain-map.nas</file>
         </terrain-map>
+	<aar> 
+	    <file>Aircraft/Generic/aar.nas</file>
+	</aar>
 	</nasal>
 
 </PropertyList>
