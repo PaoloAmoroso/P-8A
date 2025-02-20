@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+<sim>
+    <model>
+        <livery>                     
+            <name type="string">Marineflieger, 63+01</name>
+            <texture>Liveries-P-8/Marineflieger.png</texture>  
+			<newwinglets type="bool">false</newwinglets>
+			<nowinglets type="bool">false</nowinglets>
+        </livery>        
+    </model>
+</sim>
+</PropertyList>
