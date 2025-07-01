@@ -270,16 +270,16 @@
 		<yokes-visible type="bool">1</yokes-visible>
 	</sim>
 
-	     <systems>
-		     <refuel>
-			     <type>boom</type>
-			     <serviceable type="bool">true</serviceable>
-			     <max-fuel-transfer-lbs-min>6400</max-fuel-transfer-lbs-min>
-			     <offset-x-m>0</offset-x-m>
-			     <offset-y-m>0</offset-y-m>
-			     <offset-z-m>1</offset-z-m>
-		     </refuel>  
-	     </systems>
+     <systems>
+	  <refuel>
+		<type>boom</type>
+		<serviceable type="bool">true</serviceable>
+           <max-fuel-transfer-lbs-min>6400</max-fuel-transfer-lbs-min>
+           <offset-x-m>0</offset-x-m>
+           <offset-y-m>0</offset-y-m>
+           <offset-z-m>1</offset-z-m>
+	  </refuel>  
+     </systems>
 
 	<lighting>
 		<interior type="double">0</interior>
@@ -1214,10 +1214,10 @@
 		</static>
 	</systems>
 
-     <radar>
+     <!-- radar>
 			<enabled type="bool">false</enabled>			
 			<range type="double">150</range>
-     </radar>
+     </radar -->
 
 	<instrumentation>
 		<adf>
@@ -1347,9 +1347,25 @@
 			<display-mode archive="y">arc</display-mode>
 		</wxradar>
 
-		<radar>
+		<!-- radar>
 			<range type="int" archive="y">40</range>
-		</radar>
+		</radar -->
+
+          <radar>
+                <enabled type="bool">true</enabled>
+                <az-field type="double">120</az-field>
+                <range type="double">40</range>
+                <range-factor type="double" archive="n"> 0.001888 </range-factor>
+                <range-selected type="double">40</range-selected>
+                <display-rdr type="bool">true</display-rdr>
+                <radar-standby type="int">0</radar-standby>
+                <minimized type="bool" archive="y">false</minimized>
+                <mode>
+                  <rws type="bool">true</rws>
+                  <tws-auto type="bool">false</tws-auto>
+                </mode>
+           </radar>
+
 
 		<turn-indicator>
 			<serviceable type="bool">true</serviceable>
@@ -1501,9 +1517,9 @@
         <terrain-map>
             <file>Aircraft/P-8A/Nasal/terrain-map.nas</file>
         </terrain-map>
-	<aar> 
-	    <file>Aircraft/Generic/aar.nas</file>
-	</aar>
+	   <aar> 
+			<file>Aircraft/Generic/aar.nas</file>
+	   </aar>
 	</nasal>
 
 </PropertyList>
