@@ -14,7 +14,7 @@
     </animation> 
     
 	<model>
-		<path>Aircraft/P-8A/Instruments/LMFD/terrain-map-pixel.xml</path>
+		<path>Aircraft/P-8A/Models/Instruments/LMFD/terrain-map-pixel.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
