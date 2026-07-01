@@ -1514,9 +1514,9 @@
         <autopush_route>
             <file>Aircraft/P-8A/Nasal/Autopush/route.nas</file>
         </autopush_route>
-        <terrain-map>
-            <file>Aircraft/P-8A/Nasal/terrain-map.nas</file>
-        </terrain-map>
+        <radar>
+            <file>Aircraft/P-8A/Nasal/Radar.nas</file>
+        </radar>
 	   <aar> 
 			<file>Aircraft/Generic/aar.nas</file>
 	   </aar>
