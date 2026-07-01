@@ -41,6 +41,12 @@
     <object-name>vstab</object-name>
     <object-name>rudder</object-name>
 
+    <object-name>Bay.door.L1</object-name>
+    <object-name>Bay.door.L2</object-name>
+    <object-name>Bay.door.R1</object-name>
+    <object-name>Bay.door.R2</object-name>
+    <object-name>Bay.interior</object-name>
+
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
   </animation>
@@ -129,6 +135,13 @@
   <object-name>Bumper</object-name>
   <object-name>Weapon-Rack-int</object-name>
   <object-name>Weapon-rack-ext</object-name>
+
+    <object-name>Bay.door.L1</object-name>
+    <object-name>Bay.door.L2</object-name>
+    <object-name>Bay.door.R1</object-name>
+    <object-name>Bay.door.R2</object-name>
+    <object-name>Bay.interior</object-name>
+
   </effect>
 
   <!-- This for a better performance while in flight... -->
@@ -155,8 +168,8 @@
      <object-name>Bumper</object-name>
      <object-name>Weapon-Rack-int</object-name>
      <object-name>Weapon-rack-ext</object-name>
-
      <object-name>ngww</object-name>
+
 	<condition>
 	  <not>
 	   <property>sim/current-view/internal</property>
@@ -531,7 +544,6 @@
     </condition>
 </animation>
 
-
 <!-- Tyre Smoke -->
 
 <model>
@@ -792,7 +804,6 @@
   <heading-deg>-270</heading-deg>
 </offsets>
 </model>
-
 
 <animation>
   <type>material</type>
@@ -1227,6 +1238,112 @@
  </axis>
 </animation>
 
+<!-- Weapon Bay Doors -->
+
+<animation>
+    <type>rotate</type>
+    <object-name>Bay.door.L1</object-name>
+    <object-name>Bay.door.L2</object-name>
+    <property>sim/model/door-positions/baydoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>-25</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-95</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+			<x1-m>3.310900</x1-m>
+			<y1-m>-1.45390</y1-m>
+			<z1-m>-0.64397</z1-m>
+			<x2-m>5.277400</x2-m>
+			<y2-m>-1.45390</y2-m>
+			<z2-m>-0.64397</z2-m>
+		</axis>
+	</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Bay.door.L2</object-name>
+    <property>sim/model/door-positions/baydoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.8</ind>
+				<dep>0</dep>
+			</entry>
+
+			<entry>
+				<ind>0.81</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>110</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+			<x1-m>3.31090</x1-m>
+			<y1-m>-1.2405</y1-m>
+			<z1-m>-0.5192</z1-m>
+			<x2-m>5.27740</x2-m>
+			<y2-m>-1.2405</y2-m>
+			<z2-m>-0.5192</z2-m>
+		</axis>
+	</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Bay.door.R1</object-name>
+    <object-name>Bay.door.R2</object-name>
+    <property>sim/model/door-positions/baydoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep> 90</dep>
+			</entry>
+		</interpolation>
+		<axis>   
+			<x1-m>3.310900</x1-m>
+			<y1-m> 1.38510</y1-m>
+			<z1-m>-0.64393</z1-m>
+			<x2-m>5.277400</x2-m>
+			<y2-m> 1.38510</y2-m>
+			<z2-m>-0.64393</z2-m>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Bay.door.L1</object-name>
+    <object-name>Bay.door.L2</object-name>
+    <object-name>Bay.door.R1</object-name>
+    <object-name>Bay.door.R2</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+	   <script>boeing737.baydoor.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
   <!-- Electro-Optical/Infrared Multispectral Sensor -->
   <model>
     <name>FLIR</name>
@@ -1256,15 +1373,10 @@
     </condition>
   </animation>
 
-  <!-- Special Mission POD - (Littoral Radar AN/APS-154) -->
+  <!-- Advanced Airborne Sensor (Littoral Radar AN/APS-154) -->
   <model>
     <name>Littoral</name>
     <path>Radar/Littoral_Radar.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
-    </offsets>
   </model>
 
   <animation>
@@ -1275,7 +1387,7 @@
     </condition>
   </animation>
 
-  <!-- Radio-Frequencies Countermeasures POD (AN/ALE-55) -->
+  <!-- FOTD Radio-Frequencies Countermeasures POD (AN/ALE-55) -->
   <model>
     <name>RFCM</name>
     <path>Radar/RFCM.xml</path>
@@ -1332,7 +1444,7 @@
     </condition>
   </animation>
 
-  <!-- Upper Radome (MUOS) -->
+  <!-- SATCOM Radome (MUOS) -->
   <model>
     <name>MUOS</name>
     <path>Radar/MUOS.xml</path>
@@ -1351,15 +1463,10 @@
     </condition>
   </animation>
 
-  <!-- Rear Set of Antennas (TACAMO) -->
+  <!-- VLF/LF Antennas (TACAMO) -->
   <model>
     <name>TACAMO</name>
     <path>Radar/TACAMO.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
-    </offsets>
   </model>
 
   <animation>
@@ -1370,15 +1477,10 @@
     </condition>
   </animation>
 
-  <!-- ESM Radome (ALR-66) -->
+  <!-- ESM/RWR Radome (ALR-66) -->
   <model>
     <name>ESM-2</name>
     <path>Radar/ESM.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
-    </offsets>
   </model>
 
   <animation>
@@ -1386,6 +1488,20 @@
     <object-name>ESM-2</object-name>
     <condition>
       <property>sim/model/hide-ESM</property>
+    </condition>
+  </animation>
+
+  <!-- ASW Signal Processing System Antennas (MAC-E) -->
+  <model>
+    <name>MAC-E</name>
+    <path>Radar/MAC-E.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>MAC-E</object-name>
+    <condition>
+      <property>sim/model/hide-MAC-E</property>
     </condition>
   </animation>
 
