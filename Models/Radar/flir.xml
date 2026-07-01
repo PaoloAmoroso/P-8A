@@ -4,40 +4,27 @@
 
   <path>flir.ac</path>
 
-  
-  
-  
-  <!-- rotation animation -->
-  
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>Gass</object-name>
-
   </animation>
-	
-	
-
   
     <effect>
         <inherits-from>Effects/model-transparent</inherits-from>
- <object-name>Gass</object-name>
-
-
+ <object-name>Glass</object-name>
     </effect>
-  
-  
   
 <!-- Solid Surfaces for Rembrandt rendering -->
    <animation>
-    
-  <object-name>rotor</object-name>
+     <object-name>rotor</object-name>
 	<object-name>turretball</object-name>
-<object-name>turretbase</object-name>
+     <object-name>turretbase</object-name>
 	<object-name>flir-mount</object-name>	
     </animation>
-  
+
+<!-- Rotation -->
   <animation>
 <type>rotate</type>
 
@@ -57,7 +44,6 @@
 <z-m>-0.16</z-m>
 </center>
 </animation>
-
 
 <animation>
 <type>rotate</type>
