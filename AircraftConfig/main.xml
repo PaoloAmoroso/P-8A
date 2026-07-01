@@ -300,6 +300,16 @@
 
                 <checkbox>
 				<halign>left</halign>
+				<label>MAC-E Antenna</label>
+				<property>sim/model/hide-MAC-E</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/hide-MAC-E</property>
+				</binding>
+			</checkbox>
+
+                <checkbox>
+				<halign>left</halign>
 				<label>TACAMO Antenna</label>
 				<property>sim/model/hide-TACAMO</property>
 				<binding>
