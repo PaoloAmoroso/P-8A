@@ -280,11 +280,11 @@
 
                 <checkbox>
 				<halign>left</halign>
-				<label>Littoral Radar Pod</label>
-				<property>sim/model/hide-littoral</property>
+				<label>MAC-E Antenna</label>
+				<property>sim/model/hide-MAC-E</property>
 				<binding>
 					<command>property-toggle</command>
-					<property>sim/model/hide-littoral</property>
+					<property>sim/model/hide-MAC-E</property>
 				</binding>
 			</checkbox>
 
@@ -300,16 +300,6 @@
 
                 <checkbox>
 				<halign>left</halign>
-				<label>MAC-E Antenna</label>
-				<property>sim/model/hide-MAC-E</property>
-				<binding>
-					<command>property-toggle</command>
-					<property>sim/model/hide-MAC-E</property>
-				</binding>
-			</checkbox>
-
-                <checkbox>
-				<halign>left</halign>
 				<label>TACAMO Antenna</label>
 				<property>sim/model/hide-TACAMO</property>
 				<binding>
@@ -320,11 +310,88 @@
 
                 <checkbox>
 				<halign>left</halign>
+				<label>COMINT Antenna</label>
+				<property>sim/model/hide-COMINT</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/hide-COMINT</property>
+				</binding>
+			</checkbox>
+
+                <checkbox>
+				<halign>left</halign>
+				<label>SIGINT Antenna</label>
+				<property>sim/model/hide-SIGINT</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/hide-SIGINT</property>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-littoral</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-multimission</property>
+                           <value>0</value>
+				</binding>
+			</checkbox>
+
+			<hrule/>
+
+                <checkbox>
+				<halign>left</halign>
 				<label>ESM Radome</label>
 				<property>sim/model/hide-ESM</property>
 				<binding>
 					<command>property-toggle</command>
 					<property>sim/model/hide-ESM</property>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-littoral</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-multimission</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-BACN</property>
+                           <value>0</value>
+				</binding>
+			</checkbox>
+
+                <checkbox>
+				<halign>left</halign>
+				<label>Littoral Radar Pod</label>
+				<property>sim/model/hide-littoral</property>
+				<binding>
+					<command>property-toggle</command>
+					<property>sim/model/hide-littoral</property>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-ESM</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-multimission</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-BACN</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-SIGINT</property>
+                           <value>0</value>
 				</binding>
 			</checkbox>
 
@@ -336,6 +403,26 @@
 					<command>property-toggle</command>
 					<property>sim/model/hide-multimission</property>
 				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-ESM</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-littoral</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-BACN</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-SIGINT</property>
+                           <value>0</value>
+				</binding>
 			</checkbox>
 
                 <checkbox>
@@ -345,6 +432,21 @@
 				<binding>
 					<command>property-toggle</command>
 					<property>sim/model/hide-BACN</property>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-ESM</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-multimission</property>
+                           <value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>sim/model/hide-littoral</property>
+                           <value>0</value>
 				</binding>
 			</checkbox>
 
