@@ -50,8 +50,8 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
   </animation>
-
-  <!-- <animation n="0">
+<!--
+  <animation n="1">
     <type>material</type>
     <object-name>ESM</object-name>
     <object-name>MWS</object-name>
@@ -74,15 +74,18 @@
     <object-name>Bumper</object-name>
     <object-name>Weapon-Rack-int</object-name>
     <object-name>Weapon-Rack-ext</object-name>
+
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
-  </animation> -->
-  
+    <texture>Radome.png</texture>
+  </animation>
+-->
   <effect>
     <inherits-from>Effects/glass</inherits-from>
     <object-name>windows.int</object-name>
     <object-name>rearwindows.int</object-name>
   </effect>
+
   <!-- <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>windows.ext</object-name>
@@ -196,19 +199,10 @@
       </not>
     </condition>
   </model>
+
   <model>
     <name>LeftWing</name>
     <path>Aircraft/P-8A/Models/LWing.xml</path>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-  <model>
-    <name>NoseGear</name>
-    <path>Aircraft/P-8A/Models/NoseGear.xml</path>
     <offsets>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
@@ -227,6 +221,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
+
   <model>
     <name>VertStab</name>
     <path>Aircraft/P-8A/Models/VertStab.xml</path>
@@ -237,6 +232,7 @@
       <pitch-deg>0</pitch-deg>
     </offsets>
   </model>
+
   <model>
     <name>HorzStab</name>
     <path>Aircraft/P-8A/Models/HorzStab.xml</path>
@@ -248,17 +244,16 @@
     </offsets>
   </model>
   
-
- <model>
-        <name>Pushback</name>
-         <path>Aircraft/P-8A/Models/Autopush/pushback.xml</path>
-       <offsets>
-      <x-m>-16.5</x-m>
-      <y-m>0</y-m>
-      <z-m>-2.75</z-m>
+  <model>
+    <name>NoseGear</name>
+    <path>Aircraft/P-8A/Models/NoseGear.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+      <pitch-deg>0</pitch-deg>
     </offsets>
-    </model>
-
+  </model>
 
   <model>
     <name>Winglet2</name>
@@ -279,6 +274,16 @@
     <texture-prop>texture</texture-prop>
     <texture>737-800.png</texture>
   </animation>
+
+  <model>
+        <name>Pushback</name>
+         <path>Aircraft/P-8A/Models/Autopush/pushback.xml</path>
+       <offsets>
+      <x-m>-16.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-2.75</z-m>
+    </offsets>
+    </model>
 
 <!--Lights-->
 
@@ -1474,6 +1479,34 @@
     <object-name>TACAMO</object-name>
     <condition>
       <property>sim/model/hide-TACAMO</property>
+    </condition>
+  </animation>
+
+  <!-- COMINT Antennas -->
+  <model>
+    <name>COMINT</name>
+    <path>Radar/COMINT.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>COMINT</object-name>
+    <condition>
+      <property>sim/model/hide-COMINT</property>
+    </condition>
+  </animation>
+
+  <!-- SIGINT Antennas -->
+  <model>
+    <name>SIGINT</name>
+    <path>Radar/SIGINT.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>SIGINT</object-name>
+    <condition>
+      <property>sim/model/hide-SIGINT</property>
     </condition>
   </animation>
 
