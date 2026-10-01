@@ -21,19 +21,61 @@ MPleave = func(n) {
 
 MPradarProperties = func {
   var targetList = props.globals.getNode("ai/models/").getChildren("multiplayer");
+
   foreach (d; props.globals.getNode("ai/models/").getChildren("aircraft")) {
     append(targetList, d);
   }
 
+  var selected = getprop("instrumentation/radar/selected");
+  var range = getprop("instrumentation/radar/range");
+  var displaymode = getprop("instrumentation/radar/display-mode");
+
+  if (selected == 2) {
+    if (range == 10) {
+      setprop("instrumentation/radar/range", 20);
+      setprop("instrumentation/radar/range-factor", 0.002);
+      range = 20;
+    } elsif (range == 20) {
+      setprop("instrumentation/radar/range-factor", 0.003246);
+    } else {
+      setprop("instrumentation/radar/range-factor", 0.001623);
+    }
+
+  } elsif (selected == 3 or selected == 4) {
+    if (range == 40) {
+      setprop("instrumentation/radar/range", 20);
+      setprop("instrumentation/radar/range-factor", 0.001888);
+      range = 20;
+    } elsif (range == 20) {
+      setprop("instrumentation/radar/range-factor", 0.001888);
+    } else {
+      setprop("instrumentation/radar/range-factor", 0.003776);
+    }
+  }
+
+  var factor = getprop("instrumentation/radar/range-factor");
+  if (factor == nil) factor = 1.0;
+
+var arcOffset = 0;
+var targetFineOffset = 0.020;
+
+if (displaymode == "ARC") {
+  arcOffset = -(16.0 * range / 30.0) * factor;
+  arcOffset -= targetFineOffset;
+}
+
   foreach (m; targetList) {
+
     var name = m.getName();
     var index = m.getIndex();
-    var path = "instrumentation/radar/ai/models/" ~ name ~ "[" ~ index ~ "]/";
-    var sourcePath = "ai/models/" ~ name ~ "[" ~ index ~ "]/";
+
+    var path = "instrumentation/radar/ai/models/" ~
+               name ~ "[" ~ index ~ "]/";
+
+    var sourcePath = "ai/models/" ~
+                     name ~ "[" ~ index ~ "]/";
 
     if (getprop(path ~ "joined") == 1 or name == "aircraft") {
-      var factor = getprop("instrumentation/radar/range-factor");
-      if (factor == nil) factor = 1.0;
 
       var yNode = m.getNode("radar/y-shift", 0);
       var xNode = m.getNode("radar/x-shift", 0);
@@ -41,53 +83,46 @@ MPradarProperties = func {
       var hOffNode = m.getNode("radar/h-offset", 0);
       var inRangeNode = m.getNode("radar/in-range", 0);
 
-      var yVal = yNode != nil and yNode.getValue() != nil ? yNode.getValue() : 0;
-      var xVal = xNode != nil and xNode.getValue() != nil ? xNode.getValue() : 0;
-      var rotVal = rotNode != nil and rotNode.getValue() != nil ? rotNode.getValue() : 0;
-      var hOffVal = hOffNode != nil and hOffNode.getValue() != nil ? hOffNode.getValue() : 0;
-      var inRangeVal = inRangeNode != nil and inRangeNode.getValue() != nil ? inRangeNode.getValue() : 0;
+      var yVal = yNode != nil and yNode.getValue() != nil
+                 ? yNode.getValue() : 0;
 
-      setprop(path ~ "radar/y-shift", yVal * factor);
-      setprop(path ~ "radar/x-shift", xVal * factor);
+      var xVal = xNode != nil and xNode.getValue() != nil
+                 ? xNode.getValue() : 0;
+
+      var rotVal = rotNode != nil and rotNode.getValue() != nil
+                   ? rotNode.getValue() : 0;
+
+      var hOffVal = hOffNode != nil and hOffNode.getValue() != nil
+                    ? hOffNode.getValue() : 0;
+
+      var inRangeVal = inRangeNode != nil and inRangeNode.getValue() != nil
+                       ? inRangeNode.getValue() : 0;
+
+      setprop(path ~ "radar/y-shift",
+              yVal * factor + arcOffset);
+
+      setprop(path ~ "radar/x-shift",
+              xVal * factor);
+
       setprop(path ~ "radar/rotation", rotVal);
       setprop(path ~ "radar/h-offset", hOffVal);
 
-      if (getprop("instrumentation/radar/selected") == 2) {
+      if (selected == 2) {
+
         var xShift = getprop(path ~ "radar/x-shift");
+
         if (xShift < -0.04 or xShift > 0.04) {
           setprop(path ~ "radar/in-range", 0);
         } else {
           setprop(path ~ "radar/in-range", inRangeVal);
         }
+
       } else {
         setprop(path ~ "radar/in-range", inRangeVal);
       }
     }
   }
 
-  var selected = getprop("instrumentation/radar/selected");
-  var range = getprop("instrumentation/radar/range");
-
-  # Range Scaling Factor
-  if (selected == 2) {
-    if (range == 10) {
-      setprop("instrumentation/radar/range", 20);
-      setprop("instrumentation/radar/range-factor", 0.002);
-    } elsif (range == 20) {
-      setprop("instrumentation/radar/range-factor", 0.003246);
-    } else {
-      setprop("instrumentation/radar/range-factor", 0.001623);
-    }
-  } elsif (selected == 3 or selected == 4) {
-    if (range == 40) {
-      setprop("instrumentation/radar/range", 20);
-      setprop("instrumentation/radar/range-factor", 0.001888);
-    } elsif (range == 20) {
-      setprop("instrumentation/radar/range-factor", 0.001888);
-    } else {
-      setprop("instrumentation/radar/range-factor", 0.003776);
-    }
-  }
   settimer(MPradarProperties, 0.05);
 }
 
